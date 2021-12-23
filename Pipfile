@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 pytest = "*"
+beautifulsoup4 = "*"
+requests = "*"
+twitter-scraper = "*"
+selenium = "*"
 
 [dev-packages]
 
