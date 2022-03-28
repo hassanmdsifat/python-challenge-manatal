@@ -5,6 +5,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 class TwitterScrapper:
@@ -16,7 +17,7 @@ class TwitterScrapper:
         """
         self.__CHROME_DRIVER_PATH = os.path.join(pathlib.Path().resolve(), 'chromedriver_linux64/chromedriver')
         self.__SERVICE = Service(self.__CHROME_DRIVER_PATH)
-        self.__DRIVER = webdriver.Chrome(service=self.__SERVICE)
+        self.__DRIVER = webdriver.Chrome(ChromeDriverManager().install())
 
     def get_follower_count_by_username(self, username):
         self.__DRIVER.get(self.__BASE_TWITTER_URL + username)
