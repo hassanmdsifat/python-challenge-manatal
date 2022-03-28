@@ -12,11 +12,8 @@ class TwitterScrapper:
     def __init__(self):
         self.__BASE_TWITTER_URL = 'https://twitter.com/'
         """
-        As i am using chrome webdriver, i have put my chromedriver file inside directory,
-        please feel free to change the path of the chromedriver according to your preference
+        Using ChromeDriverManager as driver
         """
-        self.__CHROME_DRIVER_PATH = os.path.join(pathlib.Path().resolve(), 'chromedriver_linux64/chromedriver')
-        self.__SERVICE = Service(self.__CHROME_DRIVER_PATH)
         self.__DRIVER = webdriver.Chrome(ChromeDriverManager().install())
 
     def get_follower_count_by_username(self, username):
